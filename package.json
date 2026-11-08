@@ -1,0 +1,118 @@
+{
+  "name": "dsh-session-cost-daily",
+  "version": "0.1.1",
+  "description": "中转站用户的费用条：不看余额，只算钱。会话底部常驻「本次 / 今日」花费，峰谷时段一眼可辨，今日累计含已关闭的会话。Cost bar for DSH relay users: today and current-session spend, no balance API needed.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cost": "./lib/cost.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.2"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-api-remotes": "^0.1.5-rc.1 || ^0.2.0-rc.2 || ^0.2.1-rc.2 || ^0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-connection": "^0.1.5-rc.1 || ^0.2.0-rc.2 || ^0.2.1-rc.2 || ^0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-locale": "^0.1.5-rc.1 || ^0.2.0-rc.2 || ^0.2.1-rc.2 || ^0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-conversation": "^0.1.5-rc.1 || ^0.2.0-rc.2 || ^0.2.1-rc.2 || ^0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-settings": "^0.1.5-rc.1 || ^0.2.0-rc.2 || ^0.2.1-rc.2 || ^0.2.2-rc.1",
+    "@deepseek-ai/dsh-credentials": "^0.1.5-rc.1 || ^0.2.0-rc.2 || ^0.2.1-rc.2 || ^0.2.2-rc.1",
+    "@deepseek-ai/dsh-host-webserver": "^0.1.5-rc.1 || ^0.2.0-rc.2 || ^0.2.1-rc.2 || ^0.2.2-rc.1",
+    "@deepseek-ai/dsh-session": "^0.1.5-rc.1 || ^0.2.0-rc.2 || ^0.2.1-rc.2 || ^0.2.2-rc.1",
+    "@deepseek-ai/dsh-settings": "^0.1.5-rc.1 || ^0.2.0-rc.2 || ^0.2.1-rc.2 || ^0.2.2-rc.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-api-remotes": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-client-connection": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-client-locale": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-client-ui-conversation": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-client-ui-settings": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-credentials": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-host-webserver": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-session": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-settings": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.0-rc.1": "compatible",
+        "0.2.0-rc.2": "compatible",
+        "0.2.1-rc.2": "compatible",
+        "0.2.1-rc.5": "compatible",
+        "0.2.2-rc.1": "compatible"
+      }
+    }
+  },
+  "scripts": {},
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "cost",
+    "token",
+    "usage",
+    "today",
+    "relay",
+    "费用",
+    "今日"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": "^0.2.0-rc.2 || ^0.2.1-rc.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiJoeLee/dsh-session-cost-daily.git"
+  },
+  "homepage": "https://github.com/hiJoeLee/dsh-session-cost-daily#readme",
+  "bugs": {
+    "url": "https://github.com/hiJoeLee/dsh-session-cost-daily/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "hiJoeLee",
+  "sideEffects": false
+}

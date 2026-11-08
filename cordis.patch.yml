@@ -1,0 +1,13 @@
+# dsh-session-cost bundle patch: mounts the server half (per-session token
+# cost estimation over live session event logs + a loopback-only summary
+# endpoint and a DeepSeek balance query endpoint) into the profile
+# composition. The `dsh.client` declaration in package.json makes the browser
+# half (exports "./client", served at
+# /plugins/dsh-session-cost-daily/client.js) load in the web GUI.
+#
+# Activate with:
+#   dsh plugin --profile web add link:path/to/dsh-session-cost
+#   dsh plugin --profile web add dsh-session-cost-daily   (npm)
+- insert:
+    - id: session-cost
+      name: 'dsh-session-cost-daily'
